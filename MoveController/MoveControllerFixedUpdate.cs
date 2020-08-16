@@ -12,7 +12,7 @@ public class MoveControllerFixedUpdate : MonoBehaviour
     {
 
     }
-    //"Писать код в апдейте не лучая идея", тк не стабильно.
+    
     void FixedUpdate()
     {
         transform.Translate(direction.normalized * speed);
