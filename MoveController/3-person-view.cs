@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MoveController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     public float Speed
     {
         get { return speed; }
-        set { speed = value; }
+        set 
+        {
+            speed = value;
+            if (speed < 0)
+                speed = 0;
+        }
     }
         private void FixedUpdate()
     {
