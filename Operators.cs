@@ -18,6 +18,8 @@ public class test : MonoBehaviour
         //еще 1 пример 
         int? ar = null;
         int b = ar ?? -1; // output: -1
+        
+        this.body = this.GetComponent<Rigidbody>() ?? this.gameObject.AddComponent<Rigidbody>();
     
 
 
