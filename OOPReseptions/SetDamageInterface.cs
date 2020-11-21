@@ -11,6 +11,10 @@ public class Player : MonoBehaviour {
 }
 
  // фишка в том, что получатель урона, содержет разные реализации взаимодействия
+
+public interface IHittable {
+ void HitObject(Vector2 hitDirection, float damage);
+}
  
  public class Wall : MonoBehaviour, IHittable {
 
