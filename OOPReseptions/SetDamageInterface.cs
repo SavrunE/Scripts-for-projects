@@ -1,8 +1,15 @@
-private void OnTriggerEnter(Collider collider) {
+public class Player : MonoBehaviour {
+ 
+ public float damage;
+ public Vector2 direction;
+
+ private void OnTriggerEnter(Collider collider) {
   IHittable hitObject = collider.gameObject.GetComponent<MonoBihaviour>() as IHittable;
   //В версиях unity от 5.х можно передавать в метод GetComponent любой тип Т:
   IHittable hitObject = collider.gameObject.GetComponent<IHittable>();
  }
+}
+
  // фишка в том, что получатель урона, содержет разные реализации взаимодействия
  
  public class Wall : MonoBehaviour, IHittable {
