@@ -1,0 +1,3 @@
+Надо трекать статус приложения и если оно свернуто, то вызывать паузу
+
+https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnApplicationFocus.html
