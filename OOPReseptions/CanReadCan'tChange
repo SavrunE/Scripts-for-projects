@@ -1,0 +1,4 @@
+
+    [SerializeField] private Transform fixationPoint;
+
+    public Transform FixationPoint => fixationPoint;
