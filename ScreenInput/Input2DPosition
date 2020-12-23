@@ -1,4 +1,4 @@
- public Vector2 GetDirectionToClick(Vector2 headPosition)
+    public Vector2 GetDirectionToClick(Vector2 headPosition)
     {
         Vector3 mousePosition = Input.mousePosition;
 
@@ -6,4 +6,23 @@
         Vector2 direction = new Vector2(mousePosition.x - headPosition.x, mousePosition.y - headPosition.y);
 
         return direction;
+    }
+    
+    private void FixedUpdate()
+    {
+        Move(head.transform.position + head.transform.up * speed * Time.fixedDeltaTime);
+        head.transform.up = snakeInput.GetDirectionToClick(head.transform.position);
+    }
+    private void Move(Vector3 nextPosition)
+    {
+        Vector3 previousPosition = head.transform.position;
+        foreach (var tailSegment in tail)
+        {
+            Vector3 tempPosition = tailSegment.transform.position;
+            tailSegment.transform.position =
+                Vector2.Lerp(tailSegment.transform.position, previousPosition, tailSpringiness * Time.fixedDeltaTime);
+            previousPosition = tempPosition;
+        }
+
+        head.Move(nextPosition);
     }
