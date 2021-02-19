@@ -1,0 +1,11 @@
+ private MainButton[] childButtons;
+
+    private void Start()
+    {
+        childButtons = gameObject.GetComponentsInChildren<MainButton>();
+        foreach (var child in childButtons)
+        {
+
+            Debug.Log(child);
+        }
+    }
